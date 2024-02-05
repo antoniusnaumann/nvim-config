@@ -1,11 +1,4 @@
-return { 'folke/which-key.nvim', opts = {
-  event = "VeryLazy",
-  init = function()
-    print("init")
-    vim.o.timeout = true
-    vim.o.timeoutlen = 100
-  end,   
-}, {
+return { 'folke/which-key.nvim', opts = {}, {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`

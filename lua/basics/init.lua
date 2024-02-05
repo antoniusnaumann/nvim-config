@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 vim.wo.number = true
@@ -10,8 +10,8 @@ vim.o.smartcase = true
 
 vim.wo.signcolumn = 'yes'
 
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.updatetime = 200
+vim.o.timeoutlen = 400
 
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
