@@ -1,5 +1,7 @@
 return {
     -- 'arzg/vim-colors-xcode',
+    'jeffkreeftmeijer/vim-dim',
+    'chriskempson/base16-vim',
     {
       "folke/tokyonight.nvim",
       lazy = false,
