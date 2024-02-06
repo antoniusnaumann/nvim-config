@@ -41,7 +41,7 @@ return {
         -- TODO: Look for a cool light theme to use here
         set_light_mode = function()
           vim.cmd("set termguicolors")
-          vim.api.nvim_set_option("background", "light")
+          vim.api.nvim_set_option("background", "dark")
           vim.cmd("colorscheme ayu")
         end,
     },

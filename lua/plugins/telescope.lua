@@ -21,6 +21,7 @@ return {
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = "File Picker" })
       vim.keymap.set('n', '<leader>d', builtin.diagnostics, { desc = "Diagnostics Picker" })
+      vim.keymap.set('n', '<leader>D', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic Message' })
       vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = "Search in Workspace" })
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = "Search Open Buffers" })
       vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = "Search Help Tags" })

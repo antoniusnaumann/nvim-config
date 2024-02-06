@@ -21,7 +21,7 @@ local on_attach = function(_, bufnr)
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+  nmap('<leader>T', require('telescope.builtin').lsp_type_definitions, '[T]ype Definition')
   nmap('<leader>S', require('telescope.builtin').lsp_document_symbols, 'Search Symbol in Document')
   nmap('<leader>s', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Search Symbol in Workspace')
 
@@ -66,6 +66,7 @@ return {
         -- ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
         -- ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>W'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>w'] = { name = '[W]indow Management', _ = 'which_key_ignore' },
       }
       -- register which-key VISUAL mode
       -- required for visual <leader>hs (hunk stage) to work
