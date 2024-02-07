@@ -2,7 +2,7 @@ local colemak = false
 
 vim.keymap.set({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.wa, { desc = "Save All" })
-vim.keymap.set({"n", "v" }, "<leader>x", vim.cmd.q, { desc = "Close Current Buffer" })
+vim.keymap.set({ "n", "v" }, "<leader>x", vim.cmd.q, { desc = "Close Current Buffer" })
 vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 vim.wo.number = true
@@ -44,62 +44,79 @@ local function nnoremap(old, new)
     vim.api.nvim_set_keymap('n', old, new, { noremap = true })
 end
 
-if colemak then
-    noremap('n', 'h')
-    noremap('N', 'H')
-    noremap('j', 'n')
-    noremap('J', 'N')
-    noremap('e', 'j')
-    noremap('E', 'J')
-    noremap('k', 'e')
-    noremap('K', 'E')
-    noremap('h', 'i')
-    noremap('H', 'I')
-    noremap('i', 'k')
-    noremap('I', 'K')
-    noremap('o', 'l')
-    noremap('O', 'L')
-    noremap('l', 'o')
-    noremap('L', 'O')
+function Reregister()
+    if colemak then
+        noremap('n', 'h')
+        noremap('N', 'H')
+        noremap('j', 'n')
+        noremap('J', 'N')
+        noremap('e', 'j')
+        noremap('E', 'J')
+        noremap('k', 'e')
+        noremap('K', 'E')
+        noremap('h', 'i')
+        noremap('H', 'I')
+        noremap('i', 'k')
+        noremap('I', 'K')
+        noremap('o', 'l')
+        noremap('O', 'L')
+        noremap('l', 'o')
+        noremap('L', 'O')
 
-    -- Ergonomic movement to end / start
-    map('gn', '^')
-    map('gN', '0')
-    map('go', '$')
-    map('ge', '10e')
-    map('gi', '10i')
+        -- Ergonomic movement to end / start
+        noremap('gn', '^')
+        noremap('gN', '0')
+        noremap('go', '$')
+        noremap('ge', '10j')
+        noremap('gi', '10k')
 
-    map('dn', 'd^')
-    map('dN', 'd0')
-    map('do', 'd$')
+        noremap('dn', 'd^')
+        noremap('dN', 'd0')
+        noremap('do', 'd$')
 
-    map('yn', 'y^')
-    map('yN', 'y0')
-    map('yo', 'y$')
+        noremap('yn', 'y^')
+        noremap('yN', 'y0')
+        noremap('yo', 'y$')
 
-    map('cn', 'c^')
-    map('cN', 'c0')
-    map('co', 'c$')
-else
-    -- More ergonomic movement
-    map('gh', '^')
-    map('gH', '0')
-    map('gl', '$')
-    map('gj', '10j')
-    map('gk', '10k')
+        noremap('cn', 'c^')
+        noremap('cN', 'c0')
+        noremap('co', 'c$')
+    else
+        -- TODO: Remove colemak mappings here
+        -- More ergonomic movement
+        noremap('gh', '^')
+        noremap('gH', '0')
+        noremap('gl', '$')
+        noremap('gj', '10j')
+        noremap('gk', '10k')
 
-    map('dh', 'd^')
-    map('dH', 'd0')
-    map('dl', 'd$')
+        noremap('dh', 'd^')
+        noremap('dH', 'd0')
+        noremap('dl', 'd$')
 
-    map('yh', 'y^')
-    map('yH', 'y0')
-    map('yl', 'y$')
+        noremap('yh', 'y^')
+        noremap('yH', 'y0')
+        noremap('yl', 'y$')
 
-    map('ch', 'c^')
-    map('cH', 'c0')
-    map('cl', 'c$')
+        noremap('ch', 'c^')
+        noremap('cH', 'c0')
+        noremap('cl', 'c$')
+    end
 end
+
+Reregister()
+vim.api.nvim_create_user_command('Asdf',
+    function()
+        colemak = false
+        Reregister()
+        print("Switched keymap to QWERTY")
+    end, {})
+vim.api.nvim_create_user_command('Arst',
+    function()
+        colemak = true
+        Reregister()
+        print("Switched keymap to Colemak")
+    end, {})
 
 -- Helix-like line marking
 nnoremap('x', '0v$')
