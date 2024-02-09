@@ -44,6 +44,9 @@ local function nnoremap(old, new)
     vim.api.nvim_set_keymap('n', old, new, { noremap = true })
 end
 
+key_prev = '<C-k>'
+key_next = '<C-j>'
+
 function Reregister()
     if colemak then
         noremap('n', 'h')
@@ -81,6 +84,10 @@ function Reregister()
         noremap('cn', 'c^')
         noremap('cN', 'c0')
         noremap('co', 'c$')
+
+        -- Navigate dialog
+        key_prev = '<C-i>'
+        key_next = '<C-e>'
     else
         -- TODO: Remove colemak mappings here
         -- More ergonomic movement
@@ -101,7 +108,13 @@ function Reregister()
         noremap('ch', 'c^')
         noremap('cH', 'c0')
         noremap('cl', 'c$')
+
+        -- Navigate dialog
+        key_prev = '<C-k>'
+        key_next = '<C-j>'
     end
+    noremap(key_prev, '<C-p>')
+    noremap(key_next, '<C-n>')
 end
 
 Reregister()
@@ -149,3 +162,5 @@ vnoremap('D', 'd<esc>')
 
 -- Window mode
 noremap('<leader>w', '<C-w>')
+
+

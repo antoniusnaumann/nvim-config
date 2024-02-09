@@ -4,7 +4,7 @@ return { 'folke/which-key.nvim', opts = {}, {
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'auto',
         component_separators = '|',
         section_separators = '',

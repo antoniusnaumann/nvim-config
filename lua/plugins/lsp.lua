@@ -46,6 +46,7 @@ local on_attach = function(_, bufnr)
 end
 
 return {
+  { "folke/neodev.nvim", opts = {} },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
