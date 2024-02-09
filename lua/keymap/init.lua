@@ -1,7 +1,8 @@
 local colemak = false
 
 vim.keymap.set({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
-vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.wa, { desc = "Save All" })
+vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.w, { desc = "Save Current File" })
+vim.keymap.set({ "n", "v" }, "<leader>S", vim.cmd.wa, { desc = "Save All" })
 vim.keymap.set({ "n", "v" }, "<leader>x", vim.cmd.q, { desc = "Close Current Buffer" })
 vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
