@@ -1,4 +1,5 @@
 return {
+  { 'nvim-telescope/telescope-ui-select.nvim' },
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -32,6 +33,8 @@ return {
             i = {
               ['<C-u>'] = false,
               ['<C-d>'] = false,
+              [key_next] = require('telescope.actions').move_selection_next,
+              [key_prev] = require('telescope.actions').move_selection_previous,
             },
           },
         },
@@ -75,6 +78,17 @@ return {
       -- See `:help telescope.builtin`
       vim.keymap.set('n', '<leader><space>', require('telescope.builtin').oldfiles,
         { desc = 'Find recently opened files' })
+
+      require("telescope").setup {
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+              -- even more opts
+            }
+          }
+        }
+      }
+      require("telescope").load_extension("ui-select")
     end
   },
 }

@@ -119,6 +119,7 @@ function Reregister()
 end
 
 Reregister()
+
 vim.api.nvim_create_user_command('Asdf',
     function()
         colemak = false
