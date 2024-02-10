@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Disable netrw and use neotree instead
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
 require("keymap")
 
 Colors = {}
