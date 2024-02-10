@@ -10,6 +10,12 @@ return {
   config = {
     filesystem = {
       hijack_netrw_behavior = 'open_current'
+    },
+    window = {
+      mappings = {
+        ['h'] = "close_node",
+        ['l'] = "open",
+      }
     }
   }
 }
