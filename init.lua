@@ -15,7 +15,9 @@ function SetBaseColors(light)
       yellow = '#ffd60a',
       lime = '#7dd70f',
       mint = '#41d496',
-      cyan = '#5ac8f5',
+      cyan = '#46d6f2',
+      sky = '#4dcdff',
+      blue = '#4dacff',
       purple = '#d189f5',
       magenta = '#bf3fbd',
     }
@@ -28,7 +30,9 @@ function SetBaseColors(light)
       yellow = '#ffd60a',
       lime = '#7dd70f',
       mint = '#41d496',
-      cyan = '#5ac8f5',
+      cyan = '#46d6f2',
+      sky = '#4dcdff',
+      blue = '#4dacff',
       purple = '#d189f5',
       magenta = '#bf3fbd',
     }
