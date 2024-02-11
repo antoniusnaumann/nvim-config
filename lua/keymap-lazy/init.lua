@@ -15,8 +15,8 @@ cmp.setup {
     completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.insert {
-    [key_next] = cmp.mapping.select_next_item(),
-    [key_prev] = cmp.mapping.select_prev_item(),
+    [Key_next] = cmp.mapping.select_next_item(),
+    [Key_prev] = cmp.mapping.select_prev_item(),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},

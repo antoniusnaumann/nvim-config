@@ -20,7 +20,7 @@ return {
     },
     init = function()
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = "File Picker" })
+      vim.keymap.set('n', '<leader><space>', builtin.find_files, { desc = "File Picker" })
       vim.keymap.set('n', '<leader>d', builtin.diagnostics, { desc = "Diagnostics Picker" })
       vim.keymap.set('n', '<leader>D', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic Message' })
       vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = "Search in Workspace" })
@@ -33,8 +33,8 @@ return {
             i = {
               ['<C-u>'] = false,
               ['<C-d>'] = false,
-              [key_next] = require('telescope.actions').move_selection_next,
-              [key_prev] = require('telescope.actions').move_selection_previous,
+              [Key_next] = require('telescope.actions').move_selection_next,
+              [Key_prev] = require('telescope.actions').move_selection_previous,
             },
           },
         },
@@ -76,7 +76,7 @@ return {
       vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
       -- See `:help telescope.builtin`
-      vim.keymap.set('n', '<leader><space>', require('telescope.builtin').oldfiles,
+      vim.keymap.set('n', '<leader>F', require('telescope.builtin').oldfiles,
         { desc = 'Find recently opened files' })
 
       require("telescope").setup {

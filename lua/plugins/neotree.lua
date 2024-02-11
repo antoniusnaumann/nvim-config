@@ -13,8 +13,11 @@ return {
     },
     window = {
       mappings = {
-        ['h'] = "close_node",
+        [Key_left] = "close_node",
+        -- o clashes with "order" so just use arrow keys on a split keyboard with Colemak
         ['l'] = "open",
+        ['left'] = "close_node",
+        ['right'] = "open",
       }
     }
   }

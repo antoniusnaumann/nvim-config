@@ -1,4 +1,4 @@
-local colemak = false
+local colemak = true
 
 vim.keymap.set({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.w, { desc = "Save Current File" })
@@ -45,8 +45,10 @@ local function nnoremap(old, new)
     vim.api.nvim_set_keymap('n', old, new, { noremap = true })
 end
 
-key_prev = '<C-k>'
-key_next = '<C-j>'
+Key_prev = '<C-k>'
+Key_next = '<C-j>'
+Key_left = 'h'
+Key_right = 'l'
 
 function Reregister()
     if colemak then
@@ -87,8 +89,10 @@ function Reregister()
         noremap('co', 'c$')
 
         -- Navigate dialog
-        key_prev = '<C-i>'
-        key_next = '<C-e>'
+        Key_prev = '<C-i>'
+        Key_next = '<C-e>'
+        Key_left = 'n'
+        Key_right = 'o'
     else
         -- TODO: Remove colemak mappings here
         -- More ergonomic movement
@@ -111,11 +115,13 @@ function Reregister()
         noremap('cl', 'c$')
 
         -- Navigate dialog
-        key_prev = '<C-k>'
-        key_next = '<C-j>'
+        Key_prev = '<C-k>'
+        Key_next = '<C-j>'
+        Key_left = 'h'
+        Key_right = 'l'
     end
-    noremap(key_prev, '<C-p>')
-    noremap(key_next, '<C-n>')
+    noremap(Key_prev, '<C-p>')
+    noremap(Key_next, '<C-n>')
 end
 
 Reregister()
@@ -164,5 +170,3 @@ vnoremap('D', 'd<esc>')
 
 -- Window mode
 noremap('<leader>w', '<C-w>')
-
-

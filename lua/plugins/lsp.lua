@@ -29,7 +29,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<leader>K', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-  nmap('<leader>F', vim.lsp.buf.format, 'Format')
+  nmap('<leader>f', vim.lsp.buf.format, 'Format')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -131,6 +131,17 @@ return {
           }
         end,
       }
+
+      require'lspconfig'.rust_analyzer.setup {
+  cmd = vim.lsp.rpc.connect("127.0.0.1", 27631),
+  init_options = {
+    lspMux = {
+      version = "1",
+      method = "connect",
+      server = "/usr/local/bin/rust-analyzer",
+    },
+  },
+}
     end
   },
 
