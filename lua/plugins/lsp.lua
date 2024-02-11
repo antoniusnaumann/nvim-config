@@ -59,6 +59,9 @@ return {
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+
+      -- Pest grammar LSP
+      'pest-parser/pest.vim',
     },
     init = function()
       -- document existing key chains
@@ -130,18 +133,21 @@ return {
             filetypes = (servers[server_name] or {}).filetypes,
           }
         end,
+        ['pest_ls'] = function()
+          require('pest-vim').setup {}
+        end,
       }
 
-      require'lspconfig'.rust_analyzer.setup {
-  cmd = vim.lsp.rpc.connect("127.0.0.1", 27631),
-  init_options = {
-    lspMux = {
-      version = "1",
-      method = "connect",
-      server = "/usr/local/bin/rust-analyzer",
-    },
-  },
-}
+      -- require 'lspconfig'.rust_analyzer.setup {
+      --   cmd = vim.lsp.rpc.connect("127.0.0.1", 27631),
+      --   init_options = {
+      --     lspMux = {
+      --       version = "1",
+      --       method = "connect",
+      --       server = "/usr/local/bin/rust-analyzer",
+      --     },
+      --   },
+      -- }
     end
   },
 
