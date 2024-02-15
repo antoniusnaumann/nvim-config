@@ -3,7 +3,8 @@ local colemak = true
 vim.keymap.set({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.w, { desc = "Save Current File" })
 vim.keymap.set({ "n", "v" }, "<leader>S", vim.cmd.wa, { desc = "Save All" })
-vim.keymap.set({ "n", "v" }, "<leader>x", vim.cmd.q, { desc = "Close Current Buffer" })
+vim.keymap.set({ "n", "v" }, "<leader>x", vim.cmd.x, { desc = "Save & Close Current Buffer" })
+vim.keymap.set({ "n", "v" }, "<leader>q", vim.cmd.q, { desc = "Close Current Buffer" })
 vim.api.nvim_set_keymap("i", "<esc>", "<C-c>", { desc = "Exit insert mode" })
 vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
@@ -168,6 +169,9 @@ noremap('mI', 'memN')
 -- Delete current selection
 nnoremap('D', 'x')
 vnoremap('D', 'd<esc>')
+
+-- Paste in next line with P 
+noremap('P', 'o<esc>P')
 
 -- Window mode
 noremap('<leader>w', '<C-w>')
