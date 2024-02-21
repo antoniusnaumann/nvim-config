@@ -20,13 +20,8 @@ return {
           'diagnostics',
           sources = { 'nvim_diagnostic' },
           symbols = { error = ' ', warn = ' ', info = ' ' },
-          diagnostics_color = {
-            color_error = { fg = Colors.red },
-            color_warn = { fg = Colors.yellow },
-            color_info = { fg = Colors.cyan },
-          }
         } },
-        lualine_x = { { 'diff', symbols = { added = ' ', modified = '󰝤 ', removed = ' ' }, }, { 'branch', icon = { "", color = { fg = Colors.magenta } } } },
+        lualine_x = { { 'diff', symbols = { added = ' ', modified = '󰝤 ', removed = ' ' }, }, { 'branch', icon = { "" } } },
         lualine_y = {},
         lualine_z = { 'location' }
       },

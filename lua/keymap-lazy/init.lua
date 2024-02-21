@@ -50,3 +50,10 @@ cmp.setup {
   },
 }
 
+local hop = require('hop')
+vim.keymap.set('', 's', function()
+  hop.hint_char1({ current_line_only = false })
+end, { remap = true })
+vim.keymap.set('', 'S', function()
+  hop.hint_words({ current_line_only = false })
+end, { remap = true })
