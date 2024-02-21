@@ -2,6 +2,15 @@ local base = "#1e1e1e"
 local mantle = "#282828"
 local crust = "#343434"
 
+function SetColors()
+  -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = C.blue })
+  -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = C.peach })
+  -- vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = base })
+  -- vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = base })
+  vim.cmd("hi NeoTreeNormal guibg=#1e1e1e")
+  vim.cmd("hi NeoTreeNormalNC guibg=#1e1e1e")
+end
+
 return {
   {
     "catppuccin/nvim",
@@ -13,6 +22,7 @@ return {
         mason = true,
         which_key = true,
         hop = true,
+        neotree = true
       },
       color_overrides = {
         frappe = {
@@ -46,7 +56,57 @@ return {
           blue = "#57a8ff",
           -- lavender = "#7c7aff",
         }
-      }
+      },
+      highlight_overrides = {
+        macchiato = function(macchiato)
+          return {
+            ["@keyword"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.coroutine"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.function"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.operator"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.import"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.repeat"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.return"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.exception"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.conditional"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.storage"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@type.qualifier"] = { fg = macchiato.blue, style = { "bold" } },
+            ["@keyword.storage.lifetime"] = { fg = macchiato.red },
+
+            ["@type"] = { fg = macchiato.teal },
+            ["@function"] = { fg = macchiato.peach },
+            ["@function.call"] = { fg = macchiato.peach },
+            ["@function.method"] = { fg = macchiato.peach },
+            ["@function.method.call"] = { fg = macchiato.peach },
+            ["@function.macro"] = { fg = macchiato.yellow },
+            ["@lsp.type.function"] = { fg = macchiato.peach },
+            ["@lsp.type.method"] = { fg = macchiato.peach },
+
+            ["@variable.builtin"] = { fg = macchiato.sapphire, style = { "italic" } },
+            ["@variable.parameter"] = { fg = macchiato.sapphire },
+            ["@lsp.type.parameter"] = { fg = macchiato.sapphire },
+
+            ["@lsp.type.enum"] = { style = { "italic" } },
+            ["@lsp.typemod.class.defaultLibrary"] = { fg = macchiato.flamingo },
+
+            ["@string.escape"] = { style = { "bold" } },
+          }
+        end,
+      },
+      styles = {
+        comments = { "italic" },
+        conditionals = { "bold" },
+        loops = { "bold" },
+        functions = {},
+        keywords = { "bold" },
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = { "bold" },
+        properties = {},
+        types = {},
+        operators = {},
+      },
     }
   },
   {
@@ -57,11 +117,13 @@ return {
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme catppuccin-macchiato")
+        SetColors()
       end,
       set_light_mode = function()
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "light")
         vim.cmd("colorscheme catppuccin-latte")
+        SetColors()
       end,
     },
   }

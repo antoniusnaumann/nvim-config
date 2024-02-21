@@ -59,5 +59,6 @@ return {
       },
     },
     lazy = false,
-  }
+  },
+  { 'nvim-treesitter/nvim-treesitter-context', config = { enable = true } }
 }
