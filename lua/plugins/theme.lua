@@ -2,13 +2,17 @@ local base = "#1e1e1e"
 local mantle = "#282828"
 local crust = "#343434"
 
-function SetColors()
+function SetColors(dark)
   -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = C.blue })
   -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = C.peach })
   -- vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = base })
   -- vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = base })
-  vim.cmd("hi NeoTreeNormal guibg=#1e1e1e")
-  vim.cmd("hi NeoTreeNormalNC guibg=#1e1e1e")
+  if dark then
+    vim.cmd("hi NeoTreeNormal guibg=#1e1e1e")
+    vim.cmd("hi NeoTreeNormalNC guibg=#1e1e1e")
+  else
+    -- todo: better background colors
+  end
 end
 
 return {
@@ -48,8 +52,8 @@ return {
           red = "#ff8680",
           -- maroon = "#FF8E53",
           peach = "#ffc266",
-          yellow = "#ffd426",
-          green = "#8cf29b",
+          yellow = "#ece100",
+          green = "#57e690",
           teal = "#66d4cf",
           -- sky = "#5de7ff",
           -- sapphire = "#70d6ff",
@@ -117,13 +121,13 @@ return {
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme catppuccin-macchiato")
-        SetColors()
+        SetColors(true)
       end,
       set_light_mode = function()
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "light")
         vim.cmd("colorscheme catppuccin-latte")
-        SetColors()
+        SetColors(false)
       end,
     },
   }
