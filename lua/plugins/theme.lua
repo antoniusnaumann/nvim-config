@@ -125,9 +125,15 @@ return {
       end,
       set_light_mode = function()
         vim.cmd("set termguicolors")
-        vim.api.nvim_set_option("background", "light")
-        vim.cmd("colorscheme catppuccin-latte")
-        SetColors(false)
+        vim.api.nvim_set_option("background", "dark")
+        vim.cmd("colorscheme catppuccin-macchiato")
+        SetColors(true)
+
+        -- todo: configure light mode
+        -- vim.cmd("set termguicolors")
+        -- vim.api.nvim_set_option("background", "light")
+        -- vim.cmd("colorscheme catppuccin-latte")
+        -- SetColors(false)
       end,
     },
   }
