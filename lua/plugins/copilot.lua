@@ -19,5 +19,10 @@ return {
     filetypes = {
       markdown = true,
     },
-  }, 
+  },
+
+  config = function()
+    require("copilot").setup({})
+    vim.cmd("Copilot auth")
+  end
 }

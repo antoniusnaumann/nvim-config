@@ -266,11 +266,11 @@ return {
     ft = { "mojo" },
     init = function()
       local function format_mojo()
-        local util = require("lazyvim.util")
+        -- local util = require("lazyvim.util")
 
-        if util.format.enabled() then
-          vim.cmd("noa silent! !mojo format --quiet " .. vim.fn.expand("%:p"))
-        end
+        -- if util.format.enabled() then
+        --   vim.cmd("noa silent! !mojo format --quiet " .. vim.fn.expand("%:p"))
+        -- end
       end
 
       -- TODO: Fix this, runs on buf write pre and that shows an error
