@@ -33,7 +33,11 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = {
+      indent = {
+        char = "▏", -- This is a slightly thinner char than the default one, check :help ibl.config.indent.char
+      }
+    },
   },
   {
     'numToStr/Comment.nvim',
