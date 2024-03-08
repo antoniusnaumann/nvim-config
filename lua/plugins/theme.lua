@@ -5,7 +5,7 @@ return {
       keywordStyle = { bold = true, italic = false },
       colors = {
         palette = {
-          -- change all usages of these colors
+          -- Dark Mode Background
           sumiInk0 = "#161616",
           sumiInk1 = "#181818",
           sumiInk2 = "#1a1a1a",
@@ -14,12 +14,39 @@ return {
           sumiInk5 = "#363636",
           sumiInk6 = "#545454",
 
+          -- Light Mode Background
           lotusWhite0 = "#d5d5d5",
           lotusWhite1 = "#dcdcdc",
           lotusWhite2 = "#e5e5e5",
           lotusWhite3 = "#f2f2f2",
           lotusWhite4 = "#e7e7e7",
           lotusWhite5 = "#e1e1e1",
+
+          -- Fg and Comments
+          oldWhite = "#C8C8C8",
+          fujiWhite = "#DCDCDC",
+          fujiGray = "#727272",
+
+          -- Diff
+          winterGreen = "#2B3328",
+          winterYellow = "#49443C",
+          winterRed = "#43242B",
+          winterBlue = "#252535",
+
+          -- Git
+          autumnGreen = "#89dd20",
+          autumnRed = "#f85c40",
+          autumnYellow = "#fcc30d",
+
+          -- Popup and Floats
+          waveBlue1 = "#223249",
+          waveBlue2 = "#2D4F67",
+
+          -- Diagnostics
+          samuraiRed = "#E82424",
+          roninYellow = "#FF9E3B",
+          waveAqua1 = "#06deb2",
+          dragonBlue = "#4bc5f8",
         }
       },
       background = {
@@ -49,5 +76,14 @@ return {
         -- SetColors(false)
       end,
     },
+  },
+  {
+    'NvChad/nvim-colorizer.lua',
+    opts = {
+      filetypes = { "*" },
+      user_default_options = {
+        mode = "virtualtext",
+      }
+    }
   }
 }
