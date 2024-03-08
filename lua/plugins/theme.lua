@@ -1,115 +1,30 @@
-local base = "#1e1e1e"
-local mantle = "#282828"
-local crust = "#343434"
-
-function SetColors(dark)
-  -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = C.blue })
-  -- vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = C.peach })
-  -- vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = base })
-  -- vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = base })
-  if dark then
-    vim.cmd("hi NeoTreeNormal guibg=#1e1e1e")
-    vim.cmd("hi NeoTreeNormalNC guibg=#1e1e1e")
-  else
-    -- todo: better background colors
-  end
-end
-
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
+    'rebelot/kanagawa.nvim',
     config = {
-      flavour = "macchiato",
-      integrations = {
-        mason = true,
-        which_key = true,
-        hop = true,
-        neotree = true
-      },
-      color_overrides = {
-        frappe = {
-          base = base,
-          mantle = mantle,
-          crust = crust
-        },
-        mocha = {
-          base = base,
-          mantle = mantle,
-          crust = crust
-        },
-        macchiato = {
-          base = base,
-          mantle = mantle,
-          crust = crust,
-          -- Apple-like colors
-          -- TODO: Tweak the commented colors to be a bit more pastel-like
-          -- rosewater
-          -- flamingo
-          -- mauve = "#da8fff",
-          -- pink = "#ff6483",
-          red = "#ff8680",
-          -- maroon = "#FF8E53",
-          peach = "#ffc266",
-          yellow = "#ece100",
-          green = "#57e690",
-          teal = "#66d4cf",
-          -- sky = "#5de7ff",
-          -- sapphire = "#70d6ff",
-          blue = "#57a8ff",
-          -- lavender = "#7c7aff",
+      keywordStyle = { bold = true, italic = false },
+      colors = {
+        palette = {
+          -- change all usages of these colors
+          sumiInk0 = "#161616",
+          sumiInk1 = "#181818",
+          sumiInk2 = "#1a1a1a",
+          sumiInk3 = "#1e1e1e",
+          sumiInk4 = "#2a2a2a",
+          sumiInk5 = "#363636",
+          sumiInk6 = "#545454",
+
+          lotusWhite0 = "#d5d5d5",
+          lotusWhite1 = "#dcdcdc",
+          lotusWhite2 = "#e5e5e5",
+          lotusWhite3 = "#f2f2f2",
+          lotusWhite4 = "#e7e7e7",
+          lotusWhite5 = "#e1e1e1",
         }
       },
-      highlight_overrides = {
-        macchiato = function(macchiato)
-          return {
-            ["@keyword"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.coroutine"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.function"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.operator"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.import"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.repeat"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.return"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.exception"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.conditional"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.storage"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@type.qualifier"] = { fg = macchiato.blue, style = { "bold" } },
-            ["@keyword.storage.lifetime"] = { fg = macchiato.red },
-
-            ["@type"] = { fg = macchiato.teal },
-            ["@function"] = { fg = macchiato.peach },
-            ["@function.call"] = { fg = macchiato.peach },
-            ["@function.method"] = { fg = macchiato.peach },
-            ["@function.method.call"] = { fg = macchiato.peach },
-            ["@function.macro"] = { fg = macchiato.yellow },
-            ["@lsp.type.function"] = { fg = macchiato.peach },
-            ["@lsp.type.method"] = { fg = macchiato.peach },
-
-            ["@variable.builtin"] = { fg = macchiato.sapphire, style = { "italic" } },
-            ["@variable.parameter"] = { fg = macchiato.sapphire },
-            ["@lsp.type.parameter"] = { fg = macchiato.sapphire },
-
-            ["@lsp.type.enum"] = { style = { "italic" } },
-            ["@lsp.typemod.class.defaultLibrary"] = { fg = macchiato.flamingo },
-
-            ["@string.escape"] = { style = { "bold" } },
-          }
-        end,
-      },
-      styles = {
-        comments = { "italic" },
-        conditionals = { "bold" },
-        loops = { "bold" },
-        functions = {},
-        keywords = { "bold" },
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = { "bold" },
-        properties = {},
-        types = {},
-        operators = {},
+      background = {
+        dark = "wave",
+        light = "lotus"
       },
     }
   },
@@ -120,14 +35,12 @@ return {
       set_dark_mode = function()
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
-        vim.cmd("colorscheme catppuccin-macchiato")
-        SetColors(true)
+        vim.cmd("colorscheme kanagawa")
       end,
       set_light_mode = function()
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
-        vim.cmd("colorscheme catppuccin-macchiato")
-        SetColors(true)
+        vim.cmd("colorscheme kanagawa")
 
         -- todo: configure light mode
         -- vim.cmd("set termguicolors")
