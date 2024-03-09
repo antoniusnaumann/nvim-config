@@ -64,7 +64,7 @@ return {
           sakuraPink = "#ee87a7",
           -- Changing this to non-red is a quick hack
           waveRed = "#A3D4D5",
-          peachRed = "#FF645C",
+          peachRed = "#f07575",
           surimiOrange = "#FFA066",
           katanaGray = "#717C7C",
         }
@@ -77,7 +77,8 @@ return {
         return {
           HopNextKey = { fg = colors.palette.roninYellow, bold = true },
           HopNextKey1 = { fg = colors.palette.dragonBlue, bold = true },
-          HopNextKey2 = { fg = colors.palette.lightBlue, bold = false },
+          HopNextKey2 = { fg = colors.palette.lightBlue, bold = false }, 
+          ["@keyword.import"] = { fg = colors.theme.syn.keyword, bold = true },
         }
       end,
     }
