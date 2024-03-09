@@ -47,6 +47,25 @@ return {
           roninYellow = "#FF9E3B",
           waveAqua1 = "#06deb2",
           dragonBlue = "#4bc5f8",
+
+          -- Core Colors
+          oniViolet = "#9978CF",
+          oniViolet2 = "#e46afc",
+          crystalBlue = "#5882d8",
+          springViolet1 = "#938AA9",
+          springViolet2 = "#9CABCA",
+          springBlue = "#4bc5f8",
+          lightBlue = "#A3D4D5", -- unused yet
+          waveAqua2 = "#43957e",
+          springGreen = "#94C25D",
+          boatYellow1 = "#e2aa45",
+          boatYellow2 = "#fcc30d",
+          carpYellow = "#E6C384",
+          sakuraPink = "#FF739F",
+          waveRed = "#E46876",
+          peachRed = "#FF645C",
+          surimiOrange = "#FFA066",
+          katanaGray = "#717C7C",
         }
       },
       background = {
