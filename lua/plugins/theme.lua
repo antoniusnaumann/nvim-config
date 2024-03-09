@@ -83,6 +83,9 @@ return {
     }
   },
   {
+    'catpuccin/catppuccin',
+  },
+  {
     'f-person/auto-dark-mode.nvim',
     config = {
       update_interval = 1000,
