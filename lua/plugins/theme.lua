@@ -23,8 +23,8 @@ return {
           lotusWhite5 = "#e1e1e1",
 
           -- Fg and Comments
-          oldWhite = "#C8C8C8",
-          fujiWhite = "#DCDCDC",
+          oldWhite = "#C0C0C0",
+          fujiWhite = "#D7D7D7",
           fujiGray = "#727272",
 
           -- Diff
@@ -43,26 +43,27 @@ return {
           waveBlue2 = "#2D4F67",
 
           -- Diagnostics
-          samuraiRed = "#E82424",
+          samuraiRed = "#E84833",
           roninYellow = "#FF9E3B",
           waveAqua1 = "#06deb2",
           dragonBlue = "#4bc5f8",
 
           -- Core Colors
-          oniViolet = "#9978CF",
-          oniViolet2 = "#e46afc",
-          crystalBlue = "#5882d8",
+          oniViolet = "#957FB8",
+          oniViolet2 = "#db96e9",
+          crystalBlue = "#7E9CD8",
           springViolet1 = "#938AA9",
           springViolet2 = "#9CABCA",
-          springBlue = "#4bc5f8",
-          lightBlue = "#A3D4D5", -- unused yet
-          waveAqua2 = "#43957e",
+          springBlue = "#5fbbe3",
+          lightBlue = "#9ee9fa", -- unused yet
+          waveAqua2 = "#7AA89F",
           springGreen = "#94C25D",
           boatYellow1 = "#e2aa45",
-          boatYellow2 = "#fcc30d",
+          boatYellow2 = "#e2aa45",
           carpYellow = "#E6C384",
-          sakuraPink = "#FF739F",
-          waveRed = "#E46876",
+          sakuraPink = "#ee87a7",
+          -- Changing this to non-red is a quick hack
+          waveRed = "#A3D4D5",
           peachRed = "#FF645C",
           surimiOrange = "#FFA066",
           katanaGray = "#717C7C",
@@ -72,6 +73,13 @@ return {
         dark = "wave",
         light = "lotus"
       },
+      overrides = function(colors)
+        return {
+          HopNextKey = { fg = colors.palette.roninYellow, bold = true },
+          HopNextKey1 = { fg = colors.palette.dragonBlue, bold = true },
+          HopNextKey2 = { fg = colors.palette.lightBlue, bold = false },
+        }
+      end,
     }
   },
   {
@@ -79,11 +87,13 @@ return {
     config = {
       update_interval = 1000,
       set_dark_mode = function()
+        vim.g.kanagawa_lualine_bold = true
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme kanagawa")
       end,
       set_light_mode = function()
+        vim.g.kanagawa_lualine_bold = true
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme kanagawa")
