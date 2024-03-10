@@ -7,7 +7,7 @@ function UpdateColors()
   end
   
   -- HACK  Hardcoding this here. To work, lualine needs to define a color link for this.
-  vim.cmd("hi lualine_x_branch guifg=#e46afc guibg=#2a2a2a")
+  vim.cmd("hi lualine_x_branch guifg=#fc81d3 guibg=#2a2a2a gui=bold")
 end
 
 return {
@@ -55,27 +55,27 @@ return {
           waveBlue2 = "#2D4F67",
 
           -- Diagnostics
-          samuraiRed = "#E84833",
+          samuraiRed = "#ff6d5a",
           roninYellow = "#FF9E3B",
           waveAqua1 = "#06deb2",
           dragonBlue = "#4bc5f8",
 
           -- Core Colors
-          oniViolet = "#957FB8",
-          oniViolet2 = "#db96e9",
+          oniViolet = "#b670db",
+          oniViolet2 = "#ec93ce",
           crystalBlue = "#7E9CD8",
           springViolet1 = "#938AA9",
           springViolet2 = "#9CABCA",
           springBlue = "#5fbbe3",
           lightBlue = "#9ee9fa", -- unused yet
-          waveAqua2 = "#7AA89F",
+          waveAqua2 = "#52e0c4",
           springGreen = "#94C25D",
           boatYellow1 = "#e2aa45",
           boatYellow2 = "#e2aa45",
           carpYellow = "#E6C384",
           sakuraPink = "#ee87a7",
-          -- Changing this to non-red is a quick hack
-          waveRed = "#A3D4D5",
+          --  HACK  changing this to non-red is a quick hack
+          waveRed = "#c1e467",
           peachRed = "#f07575",
           surimiOrange = "#FFA066",
           katanaGray = "#717C7C",
@@ -93,6 +93,22 @@ return {
           LineNr = { bg = colors.palette.sumiInk3 },
           SignColumn = { bg = colors.palette.sumiInk3 },
           ["@keyword.import"] = { fg = colors.theme.syn.keyword, bold = true },
+          -- ["@keyword."] = { fg = colors.theme.syn.keyword, bold = true },
+          ["@lsp.type.interface"] = { fg = colors.palette.carpYellow },
+          ["@lsp.type.enum"] = { fg = colors.palette.springBlue },
+          ["@lsp.type.typeParameter"] = { fg = colors.palette.oniViolet2 },
+          ["@lsp.typemod.variable.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.function.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.method.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.class.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.struct.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.type.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.macro.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.enum.defaultLibrary"] = { italic = true },
+          ["@lsp.typemod.enumMember.defaultLibrary"] = { italic = true },
+          ["@type.qualifier"] = { fg = colors.theme.syn.keyword, bold = true },
+          ["@lsp.type.lifetime"] = { fg = colors.palette.peachRed },
+          ["@variable.builtin"] = { italic = false, bold = true, fg = colors.theme.syn.parameter }
         }
       end,
     }
