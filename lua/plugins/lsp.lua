@@ -273,7 +273,7 @@ return {
         -- end
       end
 
-      -- TODO: Fix this, runs on buf write pre and that shows an error
+      -- FIX  runs on buf write pre and that shows an error
       -- this also sets it up for all type of files which is not good
       -- require("lazyvim.util").on_very_lazy(function()
       --   require("lazyvim.plugins.lsp.format").custom_format = function(_)

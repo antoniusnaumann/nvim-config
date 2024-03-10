@@ -23,3 +23,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins")
 
 require('keymap-lazy')
+--           symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ', },
+vim.cmd("sign define DiagnosticSignError text= texthl=DiagnosticSignError")
+vim.cmd("sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn")
+vim.cmd("sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo")
+vim.cmd("sign define DiagnosticSignHint text= texthl=DiagnosticSignHint")
+
+vim.cmd("set signcolumn=yes:2")
+
+UpdateColors()

@@ -57,3 +57,14 @@ end, { remap = true })
 vim.keymap.set('', 'S', function()
   hop.hint_words({ current_line_only = false })
 end, { remap = true })
+
+-- Jump to TODO-comments
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+vim.keymap.set("n", "<leader>t", function() vim.cmd("TodoTelescope") end, { desc = "Todo Picker" })

@@ -1,3 +1,15 @@
+function UpdateColors()
+  vim.cmd("colorscheme kanagawa")
+  local groups = { "GitSignsAdd", "GitSignsChange", "GitSignsDelete", "DiagnosticSignError", "DiagnosticSignWarn",
+    "DiagnosticSignInfo", "DiagnosticSignHint" }
+  for _, group in pairs(groups) do
+    vim.cmd("hi " .. group .. " guibg=None")
+  end
+  
+  -- HACK  Hardcoding this here. To work, lualine needs to define a color link for this.
+  vim.cmd("hi lualine_x_branch guifg=#e46afc guibg=#2a2a2a")
+end
+
 return {
   {
     'rebelot/kanagawa.nvim',
@@ -77,7 +89,9 @@ return {
         return {
           HopNextKey = { fg = colors.palette.roninYellow, bold = true },
           HopNextKey1 = { fg = colors.palette.dragonBlue, bold = true },
-          HopNextKey2 = { fg = colors.palette.lightBlue, bold = false }, 
+          HopNextKey2 = { fg = colors.palette.lightBlue, bold = false },
+          LineNr = { bg = colors.palette.sumiInk3 },
+          SignColumn = { bg = colors.palette.sumiInk3 },
           ["@keyword.import"] = { fg = colors.theme.syn.keyword, bold = true },
         }
       end,
@@ -95,6 +109,8 @@ return {
         vim.cmd("set termguicolors")
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme kanagawa")
+
+        UpdateColors()
       end,
       set_light_mode = function()
         vim.g.kanagawa_lualine_bold = true
@@ -102,7 +118,9 @@ return {
         vim.api.nvim_set_option("background", "dark")
         vim.cmd("colorscheme kanagawa")
 
-        -- todo: configure light mode
+        UpdateColors()
+
+        -- TODO  configure light mode
         -- vim.cmd("set termguicolors")
         -- vim.api.nvim_set_option("background", "light")
         -- vim.cmd("colorscheme catppuccin-latte")

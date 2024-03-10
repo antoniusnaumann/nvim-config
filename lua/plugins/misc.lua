@@ -19,9 +19,13 @@ return {
         lualine_c = { {
           'diagnostics',
           sources = { 'nvim_diagnostic' },
-          symbols = { error = ' ', warn = ' ', info = ' ' },
+          symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ', },
         } },
-        lualine_x = { { 'diff', symbols = { added = ' ', modified = '󰝤 ', removed = ' ' }, }, { 'branch', icon = { "" } } },
+        lualine_x = {
+          { 'diff', symbols = { added = ' ', modified = '󰝤 ', removed = ' ' }, },
+          --  HACK  We define a color here, so lualine creates a highlight group that can be overriden
+          { 'branch', icon = { "" }, color = "HACK" }, 
+        },
         lualine_y = {},
         lualine_z = { 'location' }
       },
@@ -63,6 +67,20 @@ return {
       },
     },
     lazy = false,
+  },
+  --  PERF  BLAZINGLY FAST
+  --  TODO  Setup
+  --  HACK  This is a hack
+  --  FIX  Here is a bug
+  --  NOTE  Stop procrastinating
+  {
+    'folke/todo-comments.nvim',
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      highlight = {
+        pattern = [[.*<(KEYWORDS)\s*:?\s+]],
+      }
+    },
   },
   { 'nvim-treesitter/nvim-treesitter-context', config = { enable = true } }
 }
