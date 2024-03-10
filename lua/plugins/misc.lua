@@ -24,7 +24,7 @@ return {
         lualine_x = {
           { 'diff', symbols = { added = ' ', modified = '󰝤 ', removed = ' ' }, },
           --  HACK  We define a color here, so lualine creates a highlight group that can be overriden
-          { 'branch', icon = { "" }, color = "HACK" }, 
+          { 'branch', icon = { "" }, color = "HACK" },
         },
         lualine_y = {},
         lualine_z = { 'location' }
@@ -71,16 +71,25 @@ return {
   --  PERF  BLAZINGLY FAST
   --  TODO  Setup
   --  HACK  This is a hack
+  --  WARN  Dividing by 0 crashes this
   --  FIX  Here is a bug
   --  NOTE  Stop procrastinating
   {
     'folke/todo-comments.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
+      keywords = {
+        HACK = { color = "hack" },
+        PERF = { color = "perf" },
+      },
       highlight = {
         pattern = [[.*<(KEYWORDS)\s*:?\s+]],
-      }
-    },
+      },
+      colors = {
+        hack = { "healthWarning" },
+        perf = { "Keyword" },
+      },
+    }
   },
   { 'nvim-treesitter/nvim-treesitter-context', config = { enable = true } }
 }

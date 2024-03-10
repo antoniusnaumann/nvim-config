@@ -5,7 +5,7 @@ function UpdateColors()
   for _, group in pairs(groups) do
     vim.cmd("hi " .. group .. " guibg=None")
   end
-  
+
   -- HACK  Hardcoding this here. To work, lualine needs to define a color link for this.
   vim.cmd("hi lualine_x_branch guifg=#fc81d3 guibg=#2a2a2a gui=bold")
 end
@@ -92,6 +92,11 @@ return {
           HopNextKey2 = { fg = colors.palette.lightBlue, bold = false },
           LineNr = { bg = colors.palette.sumiInk3 },
           SignColumn = { bg = colors.palette.sumiInk3 },
+          DiagnosticWarn = { fg = colors.palette.autumnYellow },
+          DiagnosticFloatingWarn = { fg = colors.palette.autumnYellow },
+          DiagnosticSignWarn = { fg = colors.palette.autumnYellow },
+          Hack = { fg = colors.palette.roninYellow },
+          WarningMsg = { fg = colors.theme.syn.DiagnosticWarn },
           ["@keyword.import"] = { fg = colors.theme.syn.keyword, bold = true },
           -- ["@keyword."] = { fg = colors.theme.syn.keyword, bold = true },
           ["@lsp.type.interface"] = { fg = colors.palette.carpYellow },
