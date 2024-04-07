@@ -107,7 +107,10 @@
   (rune_literal)
 ] @string
 
-(escape_sequence) @escape
+(escape_sequence) @string.escape
+"\\(" @string.escape
+(closing_format_paren) @string.escape
+(format_arg) @formatarg
 
 [
   (int_literal)
