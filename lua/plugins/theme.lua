@@ -98,6 +98,7 @@ return {
           Hack = { fg = colors.palette.roninYellow },
           WarningMsg = { fg = colors.theme.syn.DiagnosticWarn },
           ["@keyword.import"] = { fg = colors.theme.syn.keyword, bold = true },
+          ["@keyword.exception"] = { fg = colors.palette.peachRed, bold = true },
           -- ["@keyword."] = { fg = colors.theme.syn.keyword, bold = true },
           ["@lsp.type.interface"] = { fg = colors.palette.carpYellow },
           ["@lsp.type.enum"] = { fg = colors.palette.springBlue },

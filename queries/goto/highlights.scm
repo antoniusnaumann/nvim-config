@@ -89,14 +89,15 @@
   "map"
   "package"
   "range"
-  "return"
-  "throw"
   "select"
   "struct"
   "switch"
   "type"
   "var"
 ] @keyword
+
+"return" @keyword.return
+"throw" @keyword.exception
 
 ; Literals
 
