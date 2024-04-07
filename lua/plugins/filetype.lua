@@ -1,10 +1,3 @@
 return {
-  "nathom/filetype.nvim",
-  config = {
-    overrides = {
-      extensions = {
-        goto = "goto"
-      }
-    }
-  }
+  { 'tree-sitter/tree-sitter-go' }
 }

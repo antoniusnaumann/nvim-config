@@ -1,4 +1,4 @@
-local colemak = false
+local colemak = true
 
 vim.keymap.set({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 vim.keymap.set({ "n", "v" }, "<leader>s", vim.cmd.w, { desc = "Save Current File" })
