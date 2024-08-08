@@ -44,3 +44,13 @@ require "nvim-treesitter.parsers".get_parser_configs().goto = {
 }
 vim.filetype.add { extension = { goto = 'goto' } }
 
+require "nvim-treesitter.parsers".get_parser_configs().galvan = {
+  install_info = {
+    url = "https://github.com/antoniusnaumann/tree-sitter-galvan",
+    files = {"src/parser.c", "src/scanner.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+    branch = "main",
+  },
+  filetype = "galvan", -- if filetype does not match the parser name
+}
+vim.filetype.add { extension = { galvan = 'galvan' } }
+
